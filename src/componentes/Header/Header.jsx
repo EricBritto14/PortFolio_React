@@ -10,8 +10,16 @@ import moon from "../Header/assets/moon.svg";
 import CV from "../Header/assets/Eric.pdf";
 import ProfileImg from "../Header/assets/imagem.jpg";
 import { SparkButton } from '@bosch-web-dds/spark-ui-react';
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Header(){
+    const navigate = useNavigate();
+
+    const handleAboutMe = (event) =>{
+        const { value } = event.target;
+        navigate(value);
+    }  
+
     const {theme, toggleTheme} = useTheme();
     
     const themeIcon = theme === 'light' ? sun : moon;
@@ -20,8 +28,10 @@ function Header(){
 
     return <section id="hero" className={styles.container}>
         <div className={styles.colorModeContainer}>
-        <spark-header search-bar="false" sub-brand="Portifólio Eric"></spark-header>
-        <spark-divider></spark-divider>
+        <spark-header search-bar="false"></spark-header>
+        <spark-divider/>
+        <h1>Portifólio Eric</h1>
+        <spark-divider/>
 
             <div className={styles.lua}>
             <img className={styles.colorMode}
@@ -39,7 +49,7 @@ function Header(){
                     <br />
                     Barreto
                 </h1>
-                <h2>BackEnd Developer</h2>
+                <h2>Developer</h2>
            
 
             <span>
@@ -51,14 +61,16 @@ function Header(){
                 </a>
             </span>
 
-            <p className={styles.description}>
-                Backend Developer, passion in Java and Python. <br/> Already used (SpringBoot, FastAPI and Django) with those languages.
-            </p>
+            
 
             <a href={CV}>
-                <SparkButton className="hover" type="button" text="Resume" icon="" iconplacement="leading" pallete="primary" disabled="false" custom-width="" download></SparkButton>
+                <SparkButton className="hover" type="button" text="Resume" icon="" iconplacement="leading" pallete="secundary" disabled="false" custom-width="" download></SparkButton>
             </a>
-            <spark-divider></spark-divider>
+
+            <div>
+            <SparkButton className="hover" type="button" text="Next" icon="" iconplacement="leading" pallete="primary" disabled="false" custom-width="" value="/about_me" onClick={handleAboutMe}></SparkButton>
+            </div>
+                <spark-divider></spark-divider>
             </div>
         </div>
     </section>

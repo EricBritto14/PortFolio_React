@@ -2,7 +2,8 @@
     flex-direction: column;
     text-align: center;
     background-color: aqua;
-    height: 150vh;
+    height: justify;
+    width: 500px;
 
     img {
         max-width: 250px;
