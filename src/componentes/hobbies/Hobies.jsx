@@ -54,6 +54,7 @@ function Hobies() {
 
             <div>
                 <SparkButton className="hover" type="button" text="Back" icon="" iconplacement="leading" pallete="secundary" disabled="false" custom-width="" value="/experience" onClick={handleVoltar}></SparkButton>
+                <SparkButton className="hover" type="button" text="Back" icon="" iconplacement="leading" pallete="secundary" disabled="false" custom-width="" value="/experience" onClick={handleVoltar}></SparkButton>
             </div>
             
         </>
